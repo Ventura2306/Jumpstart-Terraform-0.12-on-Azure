@@ -42,3 +42,9 @@
          continue-on-error: true    
          env:
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+                  - name: Terraform APPLY
+         id: Destroy
+         run: terraform destroy -auto-approve 
+         continue-on-error: true    
+         env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
