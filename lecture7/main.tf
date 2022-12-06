@@ -105,8 +105,8 @@ resource "azurerm_storage_account" "bootdiagnistic" {
   name                     = "bootdisk982"
   resource_group_name      = azurerm_resource_group.resourcegroup.name
   location                 = azurerm_resource_group.resourcegroup.location
-  account_tier             = element(split("_", var.account_type), 0)
-  account_replication_type = element(split("_", var.account_type), 1)
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
 }
 
 resource "azurerm_virtual_network" "azvnet" {
